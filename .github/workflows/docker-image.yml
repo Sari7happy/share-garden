@@ -3,6 +3,7 @@ name: EC2 auto deploy
 on:
   push:
     branches: [main]
+    types: [closed]
 
 jobs:
   build:
