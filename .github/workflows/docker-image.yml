@@ -1,9 +1,9 @@
 name: EC2 auto deploy
 
 on:
-  pull_request:
+  push:
     branches: [main]
-  types: [closed]
+    types: [closed]
 
 workflow_dispatch:
 
