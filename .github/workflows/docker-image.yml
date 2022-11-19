@@ -3,9 +3,6 @@ name: EC2 auto deploy
 on:
   push:
     branches: [main]
-    types: [closed]
-
-workflow_dispatch:
 
 jobs:
   build:
