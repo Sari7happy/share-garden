@@ -19,11 +19,11 @@ jobs:
 name: EC2 auto deploy
 
 on:
- pull_request:
-   branches: [ main ]
-   types: [closed]
+  pull_request:
+    branches: [ main ]
+  types: [closed]
 
- workflow_dispatch:
+workflow_dispatch:
 
 jobs:
  build:
