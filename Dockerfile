@@ -8,4 +8,6 @@ COPY --from=node:14.15.5 /usr/local/lib /usr/local/lib
 RUN apt-get update && apt-get install -y zip unzip && \
     docker-php-ext-install pdo pdo_mysql
     #この下だけ入力
-RUN composer install
+WORKDIR /var/www/html
+COPY src/composer.json ./
+COPY src/composer.lock ./
