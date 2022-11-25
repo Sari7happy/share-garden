@@ -1,7 +1,5 @@
 @extends('layouts.app')
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
                         @section('content')
                         <div class="container">
                             <div class="row justify-content-center">
@@ -64,7 +62,7 @@
 
                                                             @if (Route::has('password.request'))
                                                             <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                                {{ __('Forgot Your Password?') }}
+                                                                {{ __('パスワードお忘れですか?') }}
                                                             </a>
                                                             @endif
                                                         </div>
