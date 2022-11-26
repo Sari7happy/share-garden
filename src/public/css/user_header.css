@@ -1,0 +1,56 @@
+header {
+    width: 100%;
+    /* 横幅100% */
+    padding: 15px 0;
+    margin: 0 auto;
+    text-align: center;
+    background-color:#91CC10 ;
+}
+
+header .heading {
+    /* headerタグ内のheadingクラスにのみ反映される */
+    font-size: 32px;
+}
+
+ul {
+    display: table;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+    text-align: center;
+}
+
+ul li {
+    display: table-cell;
+    min-width: 250px;
+
+  
+
+    
+    /* border: 1px solid; /* 線の太さと可視化 */
+    /* border-bottom-color: 8px;下辺を透明に */
+    /* border-top-left-radius: 8px; 左上を角丸に */
+    /* border-top-right-radius: 8px; 右上を角丸に */ 
+}
+
+ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+
+}
+
+ul li.current {
+    background-color: #DEEBF7;
+}
+
+ul li.current a {
+    color: #555;
+}
+
+ul li:hover {
+    background-color: #E6FBB3;
+}
