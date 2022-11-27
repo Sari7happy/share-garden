@@ -1,6 +1,5 @@
 @extends('layouts.admin_app',['authgroup'=>'admin'])
-@extends('layouts.admin_footer')
-
+@extends('footer.admin_footer')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
