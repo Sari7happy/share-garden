@@ -1,4 +1,6 @@
+<!-- ユーザー用登録画面 -->
 @extends('layouts.app')
+@extends('footer.users_footer')
                 <div class="card-body">
                     @section('content')
                     <div class="container">
