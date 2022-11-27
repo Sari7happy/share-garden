@@ -45,7 +45,7 @@ class LoginController extends Controller
      */
     public function showAdminLoginForm()
     {
-        return view('auth.login', ['authgroup' => 'admin']);
+        return view('auth.admin.login', ['authgroup' => 'admin']);
     }
 
     public function adminLogin(Request $request)

@@ -1,6 +1,6 @@
-<!-- ユーザー用登録画面 -->
-@extends('layouts.app')
-@extends('footer.users_footer')
+<!-- 管理者用登録画面 -->
+@extends('layouts.admin_app')
+@extends('footer.admin_footer')
                 <div class="card-body">
                     @section('content')
                     <div class="container">

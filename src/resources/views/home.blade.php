@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@extends('footer.users_footer')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

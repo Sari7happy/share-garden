@@ -1,5 +1,5 @@
-@extends('layouts.app',['authgroup'=>'admin'])
-
+@extends('layouts.admin_app',['authgroup'=>'admin'])
+@extends('footer.admin_footer')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in as 管理者!') }}
+                    {{ __('あなたは管理者!') }}
                 </div>
             </div>
         </div>
