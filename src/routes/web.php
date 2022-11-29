@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +27,10 @@ Route::post('/login/admin', [App\Http\Controllers\Auth\LoginController::class, '
 Route::post('/register/admin', [App\Http\Controllers\Auth\RegisterController::class, 'registerAdmin'])->name('admin-register');
 
 Route::view('/admin', 'admin')->middleware('auth:admin')->name('admin-home');
+
+
+// 管理者用予約フォーム
+Route::prefix('admin')->group(function(){
+
+Route::resource('/reservation','App\Http\Controllers\Admin\ReservationController');
+});
