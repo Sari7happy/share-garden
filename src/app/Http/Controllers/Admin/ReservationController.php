@@ -130,9 +130,12 @@ class ReservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function destroy($id)
     {
+        
         $register_data = Register::find($id);
+        
         // レコードを削除
         $register_data->delete();
         // 削除したら一覧画面にリダイレクト
