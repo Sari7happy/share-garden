@@ -6,7 +6,7 @@
 <h2>編集フォーム</h2>
 
 <!-- 外枠 -->
-<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; background-color: gray; color: #ffffff;">
+<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; background-color: lightgray; color: black;">
 
     <form method="post" action="{{ route('reservation.update',$register_data) }}" enctype="multipart/form-data">
         @csrf
