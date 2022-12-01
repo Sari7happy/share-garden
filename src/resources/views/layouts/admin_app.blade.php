@@ -45,31 +45,31 @@
                     <!-- <ul class="navbar-nav me-auto">
 
                     </ul> -->
+
                     <nav>
                         <ul>
-                            <li><a href=”#”>予約日程投稿</a></li>
-                            <li><a href=”#”>予約日程編集</a></li>
+
+                            <li><a href={{ ('/admin/reservation/create') }}>予約日程投稿</a></li>
+                            <li><a href={{('/admin/reservation')}}>予約日程編集</a></li>
                             <li><a href=”#”>予約一覧</a></li>
-                            <li><a href=”#”>管理者ログイン</a></li>
                             <li><a href=”#”>マイページ</a></li>
-                            <li><a href=”#”>ログアウト</a></li>
                         </ul>
                     </nav>
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         <!-- ナビゲーション追加 -->
-
+                        <!-- ログイン追加 -->
                         @guest
-                        @if (Route::has('login'))
+                        @if (Route::has('/login/admin'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('adminlogin') }}</a>
+                            <a class="nav-link" href="{{ route('/login/admin') }}">{{ __('adminlogin') }}</a>
                         </li>
                         @endif
-
-                        @if (Route::has('register'))
+                        @if (Route::has('/register/admin'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('adminRegister') }}</a>
+                            <a class="nav-link" href="{{ route('/register/admin') }}">{{ __('adminRegister') }}</a>
                         </li>
                         @endif
                         @else
@@ -77,30 +77,28 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
-
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> -->
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf 
-                            </form>  
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
                 </div>
-                </li>
-                @endguest
-                </ul>
             </div>
-    </div>
-    </nav>
+        </nav>
 
-    <main class="py-4">
-        @yield('content')
-    </main>
-    <footer>
-        @yield('footer')
-    </footer>
+        <main class="py-4">
+            @yield('content')
+        </main>
+        <footer>
+            @yield('footer')
+        </footer>
     </div>
 </body>
 
