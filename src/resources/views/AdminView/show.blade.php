@@ -6,7 +6,7 @@
 <h2>詳細確認フォーム</h2>
 
 <!-- 外枠 -->
-<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; background-color: gray; color: #ffffff;">
+<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; background-color: lightgray; color: black;">
 
     <div class="col-md-7">
         <form method="post" action="{{ route('reservation.store') }}" enctype="multipart/form-data">
@@ -37,8 +37,9 @@
     画像<br />
     <img src="{{asset('storage/'.$register_data->image_path)}}" alt="">
     <div class="input-group mb-3">
-        <a href="{{ route('reservation.edit', $register_data->id) }}" class="btn btn-info ">編集する</a>
+        <a href="{{ route('reservation.edit', $register_data->id) }}" class="btn btn-info">編集する</a>
         <div class="col-8">
+            
         </div>
 
         </form>　　　
@@ -46,5 +47,6 @@
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">削除</button>
-        </form>　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+        </form>　
+    　　　　　　　　　　　　　　　　　　　　　　　
         @endsection
