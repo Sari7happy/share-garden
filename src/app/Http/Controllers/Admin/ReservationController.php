@@ -10,6 +10,10 @@ use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +34,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        //
+        return view('AdminView.create');
     }
 
     /**
