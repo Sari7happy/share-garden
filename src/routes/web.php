@@ -30,7 +30,13 @@ Route::view('/admin', 'admin')->middleware('auth:admin')->name('admin-home');
 
 
 // 管理者用予約フォーム
-Route::prefix('admin')->group(function(){
+Route::prefix('admin')->group(function () {
 
-Route::resource('/reservation','App\Http\Controllers\Admin\ReservationController');
+    Route::resource('/reservation', 'App\Http\Controllers\Admin\ReservationController');
 });
+
+Route::prefix('place')->group(function () {
+
+    Route::resource('/booking', 'App\Http\Controllers\Place\BookingController');
+});
+
