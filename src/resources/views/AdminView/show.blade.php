@@ -8,34 +8,34 @@
 <!-- 外枠 -->
 <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; background-color: lightgray; color: black;">
 
-    <div class="col-md-7">
+    <div class="col-md-3">
         <form method="post" action="{{ route('reservation.store') }}" enctype="multipart/form-data">
             @csrf
 
-            <div class="col-md-7">
+            <div class="col-md-3">
                 <label class="form-label">場所</label>
-                <p class="text" value>{{ $register_data->prefecture_name  }}</p>
+                <input type="text" value="{{ $register_data->prefecture_name  }}" name="prefecture_name" class="form-control"readonly>
             </div>
     </div>
     <br />
-    <div class="col-md-7">
+    <div class="col-md-3">
         <label class="form-label">ジャンル</label>
-        <p class="text" value>{{ $register_data->genle_name  }}</p>
+        <input type="text" value="{{ $register_data->genle_name  }}" name="genle_name" class="form-control" readonly>
     </div>
     <br />
-    <div class="col-md-7">
+    <div class="col-md-3">
         <label class="form-label">人数</label>
-        <p class="text" value>{{ $register_data->reservation_number_of_people }}</p>
+        <input type="text" value="{{ $register_data->reservation_number_of_people }}" name="reservation_number_of_people" class="form-control" readonly>
     </div>
     <br />
-    <div class="col-md-7">
+    <div class="col-md-3">
         <label class="form-label">日付</label>
-        <p class="text" value>{{ $register_data->reservation_date}}</p>
+        <input type="text" value="{{ $register_data->reservation_date}}" name="reservation_date" class="form-control" readonly>
     </div>
 
     <br />
     画像<br />
-    <img src="{{asset('storage/'.$register_data->image_path)}}" alt="">
+    <img src="{{asset('storage/'.$register_data->image_path)}}"  style="width:100px;" />
     <div class="input-group mb-3">
         <a href="{{ route('reservation.edit', $register_data->id) }}" class="btn btn-info">編集する</a>
         <div class="col-8">
