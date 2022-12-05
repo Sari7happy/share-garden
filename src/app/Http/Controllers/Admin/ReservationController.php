@@ -109,7 +109,7 @@ class ReservationController extends Controller
 
         $path = $register_data->image_path;
         if (!is_null($path)) {
-            //     // 現在の画像ファイルの削除
+            // 現在の画像ファイルの削除
             \Storage::disk('public')->delete($path);
             $path = $upload_image->store('uploads', 'public');
         

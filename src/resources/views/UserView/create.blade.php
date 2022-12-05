@@ -1,10 +1,8 @@
-@extends('layouts.admin_app',['authgroup'=>'admin'])
-@extends('footer.admin_footer')
+@extends('layouts.app')
+@extends('footer.users_footer')
 @section('content')
-<h1>予約日程投稿</h1>
-<h2>投稿フォーム</h2>
+<h1>予約ページ</h1>
 
-<!-- 外枠 -->
 <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; background-color: lightgray; color: black;width:800px;">
     <form method="post" action="{{ route('reservation.store') }}" enctype="multipart/form-data">
         @csrf
@@ -35,8 +33,9 @@
 
         <div class="input-group mb-3">
             <input type="file" class="form-control" name="image_path" aria-label="Upload">
-            <button type="submit" class="btn btn-primary btn-sm">投稿する</button>
+            <button type="submit" class="btn btn-primary btn-sm">予約する</button>
         </div>
     </form>　
 
-    @endsection
+
+@endsection

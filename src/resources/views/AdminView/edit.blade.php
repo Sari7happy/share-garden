@@ -11,22 +11,22 @@
     <form method="post" action="{{ route('reservation.update',$register_data) }}" enctype="multipart/form-data">
         @csrf
         @method('patch')
-        <div class="col-md-7">
+        <div class="col-md-3">
             <label class="form-label">場所</label>
             <input type="text" value="{{ $register_data->prefecture_name  }}" name="prefecture_name" class="form-control">
         </div>
         <br />
-        <div class="col-md-7">
+        <div class="col-md-3">
             <label class="form-label">ジャンル</label>
             <input type="text" value="{{ $register_data->genle_name  }}" name="genle_name" class="form-control">
         </div>
         <br />
-        <div class="col-md-7">
+        <div class="col-md-3">
             <label class="form-label">人数</label>
             <input type="text" value="{{ $register_data->reservation_number_of_people }}" name="reservation_number_of_people" class="form-control">
         </div>
         <br />
-        <div class="col-md-7">
+        <div class="col-md-3">
             <label class="form-label">日付</label>
             <input type="text" value="{{ $register_data->reservation_date}}" name="reservation_date" class="form-control">
         </div>
@@ -42,5 +42,5 @@
         <input type="submit" value="更新する" class="btn btn-success">
     </form>　
     　<br/>　
-    <a href="{{ route('reservation.index') }}" class="btn btn-bark"> &lt予約一覧へ戻る</a>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+    <a href="{{ route('reservation.index') }}" class="btn btn-warning"> &lt予約一覧へ戻る</a>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
     @endsection

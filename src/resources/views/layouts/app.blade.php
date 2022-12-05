@@ -31,7 +31,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md shadow-sm" style=background-color:#DDEEAA;>
             <div class="container">
-                
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,9 +40,8 @@
                     <nav>
                         <ul>
                             <li><a href=”#”>トップ</a></li>
-                            <li><a href=”#”>予約</a></li>
+                            <li><a href={{ ('/place/booking') }}>レジャー一覧</a></li>
                             <li><a href=”#”>マイページ</a></li>
-                            <li><a href=”#”>ログイン</a></li>
                         </ul>
                     </nav>
                     <!-- Left Side Of Navbar -->
@@ -54,15 +53,15 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                        @if (Route::has('login'))
+                        @if (Route::has('/login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('/login') }}">{{ __('Login') }}</a>
                         </li>
                         @endif
 
-                        @if (Route::has('register'))
+                        @if (Route::has('/register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('/register') }}">{{ __('Register') }}</a>
                         </li>
                         @endif
                         @else
@@ -88,7 +87,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="background-color:#FFFAF0;min-height:100vh;">
             @yield('content')
         </main>
         <footer>
