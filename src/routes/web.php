@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Place\BookingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,5 +39,7 @@ Route::prefix('admin')->group(function () {
 Route::prefix('place')->group(function () {
 
     Route::resource('/booking', 'App\Http\Controllers\Place\BookingController');
+    
 });
 
+Route::get('/search',[App\Http\Controllers\Place\BookingController::class,'index']);
