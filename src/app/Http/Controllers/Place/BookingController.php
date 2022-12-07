@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Place;
-use App\Models\Register;
+
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Register;
 
 class BookingController extends Controller
 {
@@ -16,10 +18,34 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $register_data = Register::all();
+        
+        $register_data = Register::paginate(10);
+        $search = $request->input('search');
+        $query = Register::query();
+        if ($search) {
+            
+            // 全角スペースを半角に変換
+            $spaceConversion = mb_convert_kana($search, 's');
+          
+            // 単語を半角スペースで区切り、配列にする
+            $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
+          
+
+            // 単語をループで回し、部分一致するものがあれば、$queryとして保持される
+            foreach ($wordArraySearched as $value) {
+                $query->where('prefecture_name', 'like', '%' . $value . '%')
+                    ->orwhere('genle_name', 'like', '%' . $value . '%');
+            }
+           
+            $register_data = $query->paginate(10);
+            
+            
+        }
+      
         return view('UserView.index', compact('register_data'));
+
     }
 
     /**
@@ -64,7 +90,7 @@ class BookingController extends Controller
      */
     public function edit($id)
     {
-      //
+        //
     }
 
     /**
