@@ -39,7 +39,13 @@ Route::prefix('admin')->group(function () {
 Route::prefix('place')->group(function () {
 
     Route::resource('/booking', 'App\Http\Controllers\Place\BookingController');
-    
 });
 
-Route::get('/search',[App\Http\Controllers\Place\BookingController::class,'index']);
+Route::get('/search', [App\Http\Controllers\Place\BookingController::class, 'index']);
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('user/index', [App\Http\Controllers\UserController::class,'index']);
+    Route::get('user/edit',  [App\Http\Controllers\UserController::class,'edit']);
+    Route::post('user/edit',  [App\Http\Controllers\UserController::class,'update']);
+});

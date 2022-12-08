@@ -41,7 +41,7 @@
                         <ul>
                             <li><a href=”#”>トップ</a></li>
                             <li><a href={{ ('/place/booking') }}>レジャー一覧</a></li>
-                            <li><a href=”#”>マイページ</a></li>
+                            <li><a href={{('/user/index')}}>マイページ</a></li>
                         </ul>
                     </nav>
                     <!-- Left Side Of Navbar -->
@@ -75,7 +75,6 @@
                                                     document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
@@ -86,7 +85,7 @@
                 </div>
             </div>
         </nav>
-
+        
         <main class="py-4" style="background-color:#FFFAF0;min-height:100vh;">
             @yield('content')
         </main>
