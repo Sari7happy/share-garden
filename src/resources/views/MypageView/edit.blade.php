@@ -2,12 +2,15 @@
 @extends('footer.users_footer')
 @section('content')
 
-<div class="container m-5">
+<div class="container m-6 ">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">マイページ登録内容の変更</div>
                 <div class="card-body">
+                    @if(session('message'))
+                    <div class="alert alert-success">{{ session('message') }}</div>
+                    @endif
                     <form method="POST" action="{{ action([App\Http\Controllers\UserController::class,'update'])}}">
                         @csrf
                         <div class="form-group">
@@ -26,18 +29,18 @@
                                 <input type="text" name="email" class="form-control" value="{{ $user->email }}" required>
                             </div>
                             <br />
-                            <button type="submit" class="btn btn-info">変更</button>
+
+                            <button type="submit" class="btn btn-outline-info">変更</button>
                             {{ csrf_field() }}
+                        </div>
+                        @if(session('message'))
+                        <div class="alert alert-success">{{ session('message') }}</div>
+                        @endif
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-@if (session('success'))
-<div class="alert alert-success">
-    {{ session('success') }}
-</div>
-@endif
-@endsection
 
+@endsection
