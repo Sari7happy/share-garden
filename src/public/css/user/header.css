@@ -1,0 +1,45 @@
+header {
+    width: 100%;
+    /* 横幅100% */
+    padding: 15px 0;
+    margin: 0 auto;
+    text-align: center;
+    background-color:#91CC10 ;
+}
+
+header .heading {
+    /* headerタグ内のheadingクラスにのみ反映される */
+    font-size: 32px;
+}
+
+ul {
+    display: table;
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+    text-align: justify; 
+}
+
+ul li {
+    display: table-cell;
+    min-width: 200px;
+
+}
+
+ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+
+}
+
+ul li.current {
+    background-color: #DEEBF7;
+}
+
+ul li.current a {
+    color: #555;
+}
