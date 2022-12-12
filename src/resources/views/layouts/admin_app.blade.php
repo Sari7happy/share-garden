@@ -45,17 +45,23 @@
                     <!-- <ul class="navbar-nav me-auto">
 
                     </ul> -->
-
                     <nav>
                         <ul>
-
+                        @auth
                             <li><a href={{ ('/admin/reservation/create') }}>予約日程投稿</a></li>
                             <li><a href={{('/admin/reservation')}}>予約日程編集</a></li>
                             <li><a href=”#”>予約一覧</a></li>
-                            <li><a href=”#”>マイページ</a></li>
+                            <li><a href={{'/admin-mypage/index'}}>マイページ</a></li>
                         </ul>
+                        @endauth
+                        @guest
+                        <ul>
+                        <li><a href={{ ('/admin/reservation/create') }}>予約日程投稿</a></li>
+                            <li><a href={{('/admin/reservation')}}>予約日程編集</a></li>
+                            <li><a href=”#”>予約一覧</a></li>
+                        </ul>
+                        @endguest
                     </nav>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
