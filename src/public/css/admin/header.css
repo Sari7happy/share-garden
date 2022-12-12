@@ -4,7 +4,7 @@ header {
     padding: 15px 0;
     margin: 0 auto;
     text-align: center;
-    background-color:#91CC10 ;
+    background-color: sandybrown;
 }
 
 header .heading {
@@ -18,11 +18,12 @@ ul {
     padding: 0;
     width: 80%;
     text-align: justify; 
+    /* 適正な位置設定 */
 }
 
 ul li {
     display: table-cell;
-    min-width: 250px;
+    min-width: 200px;
 
 }
 
@@ -44,6 +45,6 @@ ul li.current a {
     color: #555;
 }
 
-li ul:hover {
-    background-color: #E6FBB3;
+ul li:hover {
+    background-color: #FFF2CC;
 }

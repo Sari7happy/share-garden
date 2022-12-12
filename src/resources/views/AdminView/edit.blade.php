@@ -2,45 +2,57 @@
 @extends('footer.admin_footer')
 
 @section('content')
-<h1>予約日程編集</h1>
-<h2>編集フォーム</h2>
 
-<!-- 外枠 -->
-<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; background-color: lightgray; color: black;">
+<div class="container m-6 ">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header">予約日程編集フォーム</div>
+                <!-- 外枠 -->
 
-    <form method="post" action="{{ route('reservation.update',$register_data) }}" enctype="multipart/form-data">
-        @csrf
-        @method('patch')
-        <div class="col-md-3">
-            <label class="form-label">場所</label>
-            <input type="text" value="{{ $register_data->prefecture_name  }}" name="prefecture_name" class="form-control">
-        </div>
-        <br />
-        <div class="col-md-3">
-            <label class="form-label">ジャンル</label>
-            <input type="text" value="{{ $register_data->genle_name  }}" name="genle_name" class="form-control">
-        </div>
-        <br />
-        <div class="col-md-3">
-            <label class="form-label">人数</label>
-            <input type="text" value="{{ $register_data->reservation_number_of_people }}" name="reservation_number_of_people" class="form-control">
-        </div>
-        <br />
-        <div class="col-md-3">
-            <label class="form-label">日付</label>
-            <input type="text" value="{{ $register_data->reservation_date}}" name="reservation_date" class="form-control">
-        </div>
+                <form method="post" action="{{ route('reservation.update',$register_data) }}" enctype="multipart/form-data">
+                    @csrf
+                    @method('patch')
+                    <div class="form-group">
+                        <label class="form-label">場所</label>
+                        <input type="text" value="{{ $register_data->prefecture_name  }}" name="prefecture_name" class="form-control">
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label class="form-label">ジャンル</label>
+                        <input type="text" value="{{ $register_data->genle_name  }}" name="genle_name" class="form-control">
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label class="form-label">人数</label>
+                        <input type="text" value="{{ $register_data->reservation_number_of_people }}" name="reservation_number_of_people" class="form-control">
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label class="form-label">日付</label>
+                        <input type="text" value="{{ $register_data->reservation_date}}" name="reservation_date" class="form-control">
+                    </div>
 
-        <br />
-        画像<br />
-        <div class="input-group mb-3">
-            <img src="{{ Storage::url($register_data->image_path) }}" style="width:100px;" />
+                    <br />
+                    画像<br />
+                    <div class="input-group mb-3">
+                        <img src="{{ Storage::url($register_data->image_path) }}" style="width:100px;" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" name="image_path" aria-label="Upload">
+                    </div>
+                    <input type="submit" value="更新する" class="btn btn-outline-success">
+                    <br />
+                    <br />
+                    <a href="{{ route('reservation.index') }}" class="btn btn-outline-warning"> &lt予約一覧へ戻る</a>　
+                </form>　
+                　
+            </div>
         </div>
-        <div class="input-group mb-3">
-            <input type="file" class="form-control" name="image_path" aria-label="Upload">
-        </div>
-        <input type="submit" value="更新する" class="btn btn-success">
-    </form>　
-    　<br/>　
-    <a href="{{ route('reservation.index') }}" class="btn btn-warning"> &lt予約一覧へ戻る</a>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
-    @endsection
+    </div>
+</div>
+</div>
+
+　<br />　
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+@endsection
