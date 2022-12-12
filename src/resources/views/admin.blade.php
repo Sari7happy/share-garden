@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">管理者{{ __('Dashboard') }}</div>
+                <div class="card-header">管理者ページ</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('あなたは管理者!') }}
+                    <p>ようこそ、{{Auth::user()->name}}さん！</p>
                 </div>
             </div>
         </div>

@@ -64,7 +64,6 @@
                         <ul>
                             <li><a href=”#”>トップ</a></li>
                             <li><a href={{ ('/place/booking') }}>レジャー一覧</a></li>
-                            <li><a href={{('/user/index')}}>マイページ</a></li>
                         </ul>
                         @endguest
 
