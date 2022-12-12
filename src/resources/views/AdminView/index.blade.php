@@ -1,11 +1,9 @@
 @extends('layouts.admin_app',['authgroup'=>'admin'])
 @extends('footer.admin_footer')
 @section('content')
-<h1>予約日程投稿</h1>
-<h2>投稿フォーム</h2>
 
+<link href="{{ asset('css/admin/index.css') }}" rel="stylesheet">
 <!-- 外枠 -->
-<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; border-radius: 10px; background-color: lightgray; color: black;">
 
     <h1>詳細一覧</h1>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
     <table class="table table-striped">
