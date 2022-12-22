@@ -43,7 +43,7 @@
                     <nav>
                         @auth
                         <ul>
-                            <li><a href=”#”>トップ</a></li>
+                            <li><a href="#">予約一覧</a></li>
                             <li><a href={{ ('/place/booking') }}>レジャー一覧</a></li>
                             <li><a href={{('/user/index')}}>マイページ</a></li>
                             <form method="GET" action="{{ route('booking.index') }}">
@@ -62,8 +62,8 @@
                         <!-- ログインしていない時 -->
                         @guest
                         <ul>
-                            <li><a href=”#”>トップ</a></li>
-                            <li><a href={{ ('/place/booking') }}>レジャー一覧</a></li>
+                            <li><a href={{ ('/') }}>トップ</a></li>
+                            <li><a href={{('register')}}>新規登録</a></li>
                         </ul>
                         @endguest
 
