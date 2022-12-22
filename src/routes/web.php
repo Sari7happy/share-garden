@@ -16,7 +16,7 @@ use App\Http\Controllers\Place\BookingController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
 });
 
 Auth::routes();
@@ -26,7 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/login/admin', [App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm']);
 Route::get('/register/admin', [App\Http\Controllers\Auth\RegisterController::class, 'showAdminRegisterForm']);
 
-Route::post('/login/admin', [App\Http\Controllers\Auth\LoginController::class, 'adminLogin']);
+Route::post('/login/admin', [App\Http\Controllers\Auth\LoginController::class, 'adminLogin'])->name('admin-login');
 Route::post('/register/admin', [App\Http\Controllers\Auth\RegisterController::class, 'registerAdmin'])->name('admin-register');
 
  Route::view('/admin', 'admin')->middleware('auth:admin')->name('admin-home');
