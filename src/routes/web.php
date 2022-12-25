@@ -15,9 +15,8 @@ use App\Http\Controllers\Place\BookingController;
 |
 */
 
-Route::get('/', function () {
-    return view('top');
-});
+
+Route::get('/', [App\Http\Controllers\TopController::class, 'index'])->name('top');
 
 Auth::routes();
 
@@ -58,3 +57,4 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('admin-mypage/edit',  [App\Http\Controllers\AdminController::class,'edit']);
     Route::post('admin-mypage/edit',  [App\Http\Controllers\AdminController::class,'update']);
 });
+

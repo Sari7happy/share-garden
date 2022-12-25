@@ -32,7 +32,9 @@
         </p>
     </section>
     <div class="contents">
+    <h1 class='subcontents'>Sence</h1>　
     </div>
+    @include('UserView.category')
     <section>
         <h1 class="sub_title">こんなお悩みSHARE GARDENなら解決できます！<br />是非ご予約を！</h1>
         <div class="account-container">
